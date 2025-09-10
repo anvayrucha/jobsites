@@ -1,6 +1,8 @@
+/* Reset */
 body {
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 h1, p {
@@ -8,35 +10,86 @@ h1, p {
   padding: 0;
 }
 
+/* Home Container */
 .home-container {
-    background-image: url("https://assets.ccbp.in/frontend/react-js/home-lg-bg.png");
-   padding:20px;
-    height: 100vh;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+  background-image: url("https://assets.ccbp.in/frontend/react-js/home-lg-bg.png");
+  padding: 20px;
+  min-height: 100vh; /* use min-height instead of fixed height */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align text properly */
 }
 
+/* Headings and paragraphs */
 h1 {
-    /* Minimum size + scaling with viewport width */
-    font-size: calc(30px + 3vw);
-    margin-top: 0;
-    color: white;
-    padding:0;
+  font-size: calc(24px + 2vw);
+  color: white;
+  margin-bottom: 10px;
 }
 
 p {
-    font-size: calc(8px + 1vw);
-    color: white;
-   
-   
+  font-size: calc(12px + 1vw);
+  color: white;
+  max-width: 500px; /* prevent text overflow on large screens */
 }
+
+/* Button */
 .apply-button {
-    background-color: #6366f1;
-    padding:8px;
-    border-width:0px;
-    color:white;
-    margin-top:15px;
+  background-color: #6366f1;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  margin-top: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Hover effect */
+.apply-button:hover {
+  background-color: #4f46e5;
+}
+
+/* Media Queries for Mobile Devices */
+@media screen and (max-width: 768px) {
+  .home-container {
+    padding: 15px;
+    justify-content: center;
+    align-items: center; /* center text for small screens */
+    text-align: center;
+  }
+
+  h1 {
+    font-size: calc(20px + 3vw);
+  }
+
+  p {
+    font-size: calc(10px + 1.5vw);
+  }
+
+  .apply-button {
+    width: 80%; /* button takes full width on mobile */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .apply-button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
 }
